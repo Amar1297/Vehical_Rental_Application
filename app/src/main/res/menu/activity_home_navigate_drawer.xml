@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_Profile"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/profile" />
+
+        <item
+            android:id="@+id/nav_cars"
+            android:icon="@drawable/ic_car_black_24dp"
+            android:title="@string/add_car" />
+        <item
+            android:id="@+id/nav_Bikes"
+            android:icon="@drawable/ic_bike_black_24dp"
+            android:title="@string/add_bike" />
+        <item
+            android:id="@+id/nav_myvehicles"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="My Vehicles" />
+        <item
+            android:id="@+id/nav_LogOut"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="@string/log_out"
+
+            />
+    </group>
+
+</menu>

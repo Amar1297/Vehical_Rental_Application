@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.profile.Activities.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_Profile"
+        android:name="com.example.profile.Activities.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_cars"
+        android:name="com.example.profile.Activities.ui.car.CarFragment"
+        android:label="Car"
+        tools:layout="@layout/car_fragment"/>
+    <fragment
+        android:id="@+id/nav_Bikes"
+        android:name="com.example.profile.Activities.ui.bike.BikeFragment"
+        android:label="Bike"
+        tools:layout="@layout/bike_fragment" />
+
+
+
+
+    <fragment
+        android:id="@+id/nav_myvehicles"
+        android:name="com.example.profile.Activities.ui.vehicles.MyVehicles"
+        android:label="My Vehicles"
+        tools:layout="@layout/fragment_myvehicles" />
+    <fragment
+        android:id="@+id/nav_LogOut"
+        android:name="com.example.profile.Activities.ui.home.HomeFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_home" />
+
+</navigation>

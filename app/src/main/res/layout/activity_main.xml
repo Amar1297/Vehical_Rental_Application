@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".Activities.Registration">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="50dp"
+                app:layout_constraintBottom_toTopOf="@+id/RegName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.456">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/profile" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="337dp" />
+
+            <EditText
+                android:id="@+id/RegName"
+                android:layout_width="265dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:textColor="@android:color/holo_blue_light"
+                android:background="@drawable/reg_ediit_text_style"
+                android:ems="10"
+                android:autofillHints=""
+                android:hint="@string/name"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toTopOf="@+id/RegEmail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/RegEmail"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:autofillHints=""
+        android:textColor="@android:color/holo_blue_light"
+        android:background="@drawable/reg_ediit_text_style"
+        android:ems="10"
+        android:hint="@string/email"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName|textEmailSubject"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="266dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_editor_absoluteX="92dp"
+        app:layout_editor_absoluteY="82dp"
+        app:passwordToggleEnabled="true"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/Regpass"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="68dp"
+            android:background="@drawable/reg_ediit_text_style"
+            android:ems="10"
+            android:hint="PassWord"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName|textPassword"
+            android:textColor="@android:color/holo_blue_light" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                android:layout_width="266dp"
+                android:layout_height="55dp"
+                android:layout_marginBottom="28dp"
+                app:layout_constraintBottom_toTopOf="@+id/mobile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_editor_absoluteX="92dp"
+                app:layout_editor_absoluteY="82dp"
+                app:passwordToggleEnabled="true"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:id="@+id/Config_pass"
+                    android:layout_width="265dp"
+                    android:layout_height="33dp"
+                    android:layout_marginBottom="32dp"
+                    android:autofillHints=""
+                    android:background="@drawable/reg_ediit_text_style"
+                    android:ems="10"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:hint="Confirm Password"
+                    android:inputType="textPersonName|textPassword"
+                    app:layout_constraintBottom_toTopOf="@+id/mobile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="265dp"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_blue_light"
+                android:layout_marginBottom="32dp"
+                android:autofillHints=""
+                android:background="@drawable/reg_ediit_text_style"
+                android:digits="0123456789+"
+                android:ems="10"
+                android:hint="Mobile No"
+                android:inputType="phone"
+                app:layout_constraintBottom_toTopOf="@+id/LicenceNo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/LicenceNo"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:autofillHints=""
+        android:textColor="@android:color/holo_blue_light"
+        android:background="@drawable/reg_ediit_text_style"
+        android:ems="10"
+        android:hint="@string/driving_licence_no"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/RegButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/RegButton"
+        android:layout_width="135dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/reg_btn_style"
+        android:text="@string/register"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/RegButton"
+                app:layout_constraintEnd_toEndOf="@+id/RegButton"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="@+id/RegButton"
+                app:layout_constraintTop_toTopOf="@+id/RegButton"
+                app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:layout_width="224dp"
+        android:layout_height="24dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="@string/already_account_signin_here"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.407" />
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googlebtn"
+        android:layout_width="135dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

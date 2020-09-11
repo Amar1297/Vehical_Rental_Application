@@ -1,0 +1,28 @@
+<resources>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="todo">TODO</string>
+    <string name="email">Email</string>
+    <string name="not_account_signup_here">Not Account? SignUp here</string>
+    <string name="signin">SignIn</string>
+    <string name="already_account_signin_here">Already Account? SignIn here</string>
+    <string name="title_activity_home_navigate">HomeNavigate</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+
+    <string name="log_out">Log Out</string>
+    <string name="profile">Profile</string>
+    <string name="add_car">Add Car</string>
+    <string name="add_bike">Add Bike</string>
+    <string name="car_name">Car Name</string>
+    <string name="car_model">Car Model</string>
+    <string name="car_year">Car Year</string>
+    <string name="insurance_number">Insurance Number</string>
+    <string name="driving_licence_no">Driving Licence No</string>
+
+
+</resources>

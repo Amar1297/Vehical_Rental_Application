@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".Activities.ui.bike.BikeFragment">
+
+    <ImageView
+        android:id="@+id/bikeimg"
+        android:layout_width="260dp"
+        android:layout_height="140dp"
+        android:layout_above="@+id/bikename"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="37dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_bike_black_24dp" />
+
+    <EditText
+        android:id="@+id/bikename"
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bikenumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:hint="Bike Name"
+        android:background="@drawable/reg_ediit_text_style"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/bikenumber"
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bikemodel"
+        android:layout_marginBottom="24dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Bike Number"
+        android:background="@drawable/reg_ediit_text_style"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/bikemodel"
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bikeyear"
+        android:layout_marginBottom="24dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Bike Model"
+        android:background="@drawable/reg_ediit_text_style"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/bikeyear"
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bikeInsurance"
+        android:layout_marginBottom="24dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Bike Year"
+        android:background="@drawable/reg_ediit_text_style"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/bikeInsurance"
+        android:layout_width="251dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="82dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="178dp"
+        android:background="@drawable/reg_ediit_text_style"
+        android:hint="Insurance Number"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/bikesubmit"
+        android:layout_width="135dp"
+        android:layout_height="51dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="79dp"
+        android:background="@drawable/reg_btn_style"
+        android:text="@string/signin"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.199" />
+
+    <ProgressBar
+        android:id="@+id/bikeprogress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/bikesubmit"
+        android:layout_alignTop="@+id/bikesubmit"
+        android:layout_alignEnd="@+id/bikesubmit"
+        android:layout_alignBottom="@+id/bikesubmit"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="1dp" />
+
+
+</RelativeLayout>
