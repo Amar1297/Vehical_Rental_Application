@@ -1,4 +1,4 @@
-package com.example.profile.Activities;
+package com.example.profile.Adapters;
 
 import android.content.Context;
 import android.content.Intent;

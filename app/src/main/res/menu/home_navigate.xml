@@ -10,4 +10,15 @@
         app:showAsAction="ifRoom"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
+    <item
+        android:id="@+id/sortbybike"
+        android:title="Sort By Bike"/>
+
+    <item
+        android:id="@+id/sortbycar"
+        android:title="Sort By Car"/>
+
+    <item
+        android:id="@+id/sortbyname"
+        android:title="Name A-Z"/>
 </menu>

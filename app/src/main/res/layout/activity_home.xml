@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#1B2C8A"
     android:backgroundTint="#15174E"
-    tools:context=".Activities.Home">
+    tools:context=".Modules.Home">
 
 
     <ImageView

@@ -1,4 +1,4 @@
-package com.example.profile.Activities;
+package com.example.profile.Modules;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;

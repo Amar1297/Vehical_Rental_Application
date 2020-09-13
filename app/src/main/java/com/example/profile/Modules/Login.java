@@ -1,4 +1,4 @@
-package com.example.profile.Activities;
+package com.example.profile.Modules;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -14,16 +14,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.profile.Activities.HomeNavigate;
 import com.example.profile.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.mongodb.stitch.android.core.Stitch;
-import com.mongodb.stitch.android.core.StitchAppClient;
-import com.mongodb.stitch.android.core.auth.StitchUser;
-import com.mongodb.stitch.core.auth.providers.anonymous.AnonymousCredential;
 
 public class Login extends AppCompatActivity {
 
@@ -65,24 +62,24 @@ public class Login extends AppCompatActivity {
     }
 
     private void SignIn() {
+  try {
+      login.setVisibility(View.INVISIBLE);
+      progressBar.setVisibility(View.VISIBLE);
 
-        login.setVisibility(View.INVISIBLE);
-        progressBar.setVisibility(View.VISIBLE);
+      final String Email = email.getText().toString().trim();
+      final String Pass = pass.getText().toString().trim();
 
-        final String Email=email.getText().toString().trim();
-        final String Pass=pass.getText().toString().trim();
+      if (Email.isEmpty() || Pass.isEmpty()) {
+          ShowMessage("Empty Fields");
+          progressBar.setVisibility(View.INVISIBLE);
+          login.setVisibility(View.VISIBLE);
 
-        if( Email.isEmpty() || Pass.isEmpty() ) {
-            ShowMessage("Empty Fields");
-            progressBar.setVisibility(View.INVISIBLE);
-            login.setVisibility(View.VISIBLE);
-
-        }
-        else
-        {
-            SignInAccount(Email,Pass);
-        }
-
+      } else {
+          SignInAccount(Email, Pass);
+      }
+  }catch (Exception e){
+      ShowMessage(e.toString());
+  }
     }
 
     private void SignInAccount(String email, String pass) {
@@ -113,7 +110,7 @@ try {
     private void UpdateUI() {
 
         ShowMessage("Please Wait Account is Loading...");
-        Intent intent=new Intent(getApplicationContext(),HomeNavigate.class);
+        Intent intent=new Intent(getApplicationContext(), HomeNavigate.class);
         startActivity(intent);
         finish();
 
@@ -129,14 +126,18 @@ try {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser user=firebaseAuth.getCurrentUser();
 
-        if(user!=null)
-        {
+        try {
+            FirebaseUser user = firebaseAuth.getCurrentUser();
 
-            Intent intent=new Intent(getApplicationContext(),HomeNavigate.class);
+        if (user != null) {
+
+            Intent intent = new Intent(getApplicationContext(), HomeNavigate.class);
             startActivity(intent);
             finish();
+        }
+    }catch (Exception e){
+            ShowMessage(e.toString());
         }
     }
 

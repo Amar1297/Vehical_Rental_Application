@@ -9,6 +9,13 @@ public class MyData {
     public MyData() {
     }
 
+    public MyData(String email, String password, String mobile_NO, String licence) {
+        Email = email;
+        this.password = password;
+        Mobile_NO = mobile_NO;
+        Licence = licence;
+    }
+
     public String getEmail() {
         return Email;
     }

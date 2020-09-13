@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.ComponentActivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +25,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.bumptech.glide.Glide;
+import com.example.profile.Modules.Login;
 import com.example.profile.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -42,6 +45,8 @@ public class HomeNavigate extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
+
+
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +62,8 @@ public class HomeNavigate extends AppCompatActivity {
         final FloatingActionButton fab = findViewById(R.id.fab);
         firebaseAuth=FirebaseAuth.getInstance();
         user=firebaseAuth.getCurrentUser();
+        
+        
 
         try {
             final StitchAppClient stitchAppClient = Stitch.initializeAppClient("mongodemo-gopcv");
@@ -76,7 +83,7 @@ public class HomeNavigate extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Report Any Issue @project.com", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Report Any Issue@project.com", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -127,9 +134,6 @@ public class HomeNavigate extends AppCompatActivity {
 
 
     }
-
-
-
 
 
     @Override

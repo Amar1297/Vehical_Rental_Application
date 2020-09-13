@@ -1,10 +1,13 @@
 package com.example.profile.Activities.ui.vehicles;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -14,6 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.profile.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,11 +26,14 @@ import com.mongodb.stitch.android.core.StitchAppClient;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteFindIterable;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoCollection;
+import com.mongodb.stitch.core.services.mongodb.remote.RemoteDeleteResult;
 
 import org.bson.Document;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.mongodb.client.model.Filters.eq;
 
 
 public class MyVehicles extends Fragment {
@@ -46,7 +53,35 @@ FirebaseUser user;
 
                         DataGet();
 
+listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
+        builder.setTitle("Are You Sure...");
+        builder.setMessage("you Want To Delete Vehicle Information...");
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String Name = mylist.get(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                            Delete(Name);
+                    }
+                });
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getContext(), "Cancelled...", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.show();
+    }
+});
 
 
         return root;
@@ -146,6 +181,33 @@ FirebaseUser user;
         {
             Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+
+
+    private  void Delete(String Name){
+        final RemoteMongoClient mongoClient = stitchAppClient.getServiceClient(RemoteMongoClient.factory, "Mongodb");
+
+        RemoteMongoCollection<Document> coll = mongoClient.getDatabase("Bike").getCollection("Info");
+        RemoteMongoCollection<Document> coll2 = mongoClient.getDatabase("Car").getCollection("Info");
+
+       Task<RemoteDeleteResult> rest1 =  coll.deleteOne(eq("name",Name));
+       Task<RemoteDeleteResult> rest2 =  coll2.deleteOne(eq("name",Name));
+
+       rest1.addOnSuccessListener(new OnSuccessListener<RemoteDeleteResult>() {
+           @Override
+           public void onSuccess(RemoteDeleteResult remoteDeleteResult) {
+               Toast.makeText(getContext(), remoteDeleteResult.toString(), Toast.LENGTH_SHORT).show();
+           }
+       });
+
+       rest2.addOnSuccessListener(new OnSuccessListener<RemoteDeleteResult>() {
+           @Override
+           public void onSuccess(RemoteDeleteResult remoteDeleteResult) {
+               Toast.makeText(getContext(), remoteDeleteResult.toString(), Toast.LENGTH_SHORT).show();
+           }
+       });
 
     }
      }

@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.example.profile.MyData;
 import com.example.profile.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,6 +40,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
          View root = inflater.inflate(R.layout.fragment_profile, container, false);
+        try {
       firebaseAuth=FirebaseAuth.getInstance();
       user=firebaseAuth.getCurrentUser();
 
@@ -48,7 +50,7 @@ public class ProfileFragment extends Fragment {
         final TextView  pass=root.findViewById(R.id.Regpass);
         final TextView  mobile=root.findViewById(R.id.mobile);
         final TextView  licence=root.findViewById(R.id.LicenceNo);
-try {
+
 
     name.setText(user.getDisplayName());
 
@@ -57,13 +59,19 @@ try {
 
 
     DatabaseReference mStorageRef = FirebaseDatabase.getInstance().getReference().child("user");
+
+
+
     mStorageRef.child("data").addValueEventListener(new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
            for(DataSnapshot ds:dataSnapshot.getChildren())
            {
 
                String mail=ds.child("email").getValue().toString();
+               Toast.makeText(getContext(), mail, Toast.LENGTH_SHORT).show();
                String password=ds.child("password").getValue().toString();
                String number=ds.child("mobile_NO").getValue().toString();
                String lice=ds.child("licence").getValue().toString();
